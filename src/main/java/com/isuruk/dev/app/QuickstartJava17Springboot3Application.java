@@ -1,13 +1,6 @@
 package com.isuruk.dev.app;
 
-import com.isuruk.dev.app.beans.ColorPrinter;
-import com.isuruk.dev.app.beans.impl.BlueInkImpl;
-import com.isuruk.dev.app.beans.impl.ColorPrinterImpl;
-import com.isuruk.dev.app.beans.impl.GreenInkImpl;
-import com.isuruk.dev.app.beans.impl.RedInkImpl;
-import com.isuruk.dev.app.config.PizzaConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,11 +10,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class QuickstartJava17Springboot3Application {
 
-	@Autowired
-	private ColorPrinter colorPrinter;
 
-	@Autowired
-	private PizzaConfig pizzaConfig;
 
 	public static void main(String[] args) {
 		SpringApplication.run(QuickstartJava17Springboot3Application.class, args);
@@ -30,11 +19,7 @@ public class QuickstartJava17Springboot3Application {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-		//	colorPrinter = new ColorPrinterImpl(new BlueInkImpl(), new RedInkImpl(), new GreenInkImpl());
-			colorPrinter.print();
-			log.info("Printing completed");
 
-			log.info(String.format("Pizza with sause:%s, topping:%s, crust:%s",pizzaConfig.getSause(),pizzaConfig.getTopping(),pizzaConfig.getCrust()));
 		};
 	}
 
