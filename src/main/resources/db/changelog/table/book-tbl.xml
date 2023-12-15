@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+        <changeSet id="202312151051" author="isuruk">
+            <comment>Creating book table</comment>
+            <createTable tableName="book">
+                <column name="isbn" type="VARCHAR(50)"/>
+                <column name="title" type="VARCHAR(200)"/>
+                <column name="author_id" type="BIGINT"/>
+            </createTable>
+        </changeSet>
+</databaseChangeLog>
